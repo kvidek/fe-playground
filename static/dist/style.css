@@ -810,9 +810,7 @@ a {
   width: 3000%;
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-size: 100% 100%;
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1); }
+  background-size: 100% 100%; }
 
 .c-video-png__overlay:after {
   content: "";
@@ -826,7 +824,7 @@ a {
 
 .c-video-png__cta {
   position: absolute;
-  bottom: 12px;
+  bottom: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -849,15 +847,15 @@ a {
 
 @media (min-width: 480px) {
   .c-video-png__cta {
-    bottom: calc(0.83333vw + 8px); } }
+    bottom: calc(0.83333vw + 12px); } }
 
 @media (min-width: 1440px) {
   .c-video-png__cta {
-    bottom: 20px; } }
+    bottom: 24px; } }
 
 @media (min-width: 1440px) {
   .c-video-png__cta {
-    bottom: 1.38889vw; } }
+    bottom: 1.66667vw; } }
 
 .c-video-png__cta span {
   display: inline-block;
@@ -865,7 +863,7 @@ a {
 
 .c-scrolldown {
   width: 1px;
-  height: 40px;
+  height: 30px;
   position: absolute;
   bottom: 25px;
   left: 0;
@@ -874,26 +872,26 @@ a {
   overflow: hidden;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #000000), color-stop(50%, rgba(0, 0, 0, 0)));
   background: linear-gradient(to bottom, #000000 50%, rgba(0, 0, 0, 0) 50%);
-  background-position: 0 -40px;
+  background-position: 0 -30px;
   background-size: 100% 200%;
-  -webkit-animation: scrolldown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
-          animation: scrolldown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite; }
+  -webkit-animation: scrolldown 2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+          animation: scrolldown 2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite; }
 
 @-webkit-keyframes scrolldown {
   0% {
-    background-position: 0 -40px; }
+    background-position: 0 -30px; }
   75% {
     background-position: 0 0; }
   100% {
-    background-position: 0 40px; } }
+    background-position: 0 30px; } }
 
 @keyframes scrolldown {
   0% {
-    background-position: 0 -40px; }
+    background-position: 0 -30px; }
   75% {
     background-position: 0 0; }
   100% {
-    background-position: 0 40px; } }
+    background-position: 0 30px; } }
 
 .c-navigation .o-container {
   display: -webkit-box;

@@ -40,7 +40,7 @@
         background-repeat: no-repeat;
         background-position: 0 0;
         background-size: 100% 100%;
-        transform: scaleX(-1); //invert animation
+        //transform: scaleX(-1); //invert animation
 
         &:after {
             content: "";
@@ -56,7 +56,7 @@
 
     &__cta {
         position: absolute;
-        @include fluidValue("bottom", "s-20");
+        @include fluidValue("bottom", "s-24");
         display: flex;
         left: 50%;
         transform: translateX(-50%);
@@ -73,9 +73,12 @@
     }
 }
 
+$scrolldown-height: 30px;
+$scrolldown-duration: 2s;
+
 .c-scrolldown {
     width: 1px;
-    height: 40px;
+    height: $scrolldown-height;
     position: absolute;
     bottom: 25px;
     left: 0;
@@ -83,19 +86,19 @@
     margin: 0 auto;
     overflow: hidden;
     background: linear-gradient(to bottom, $black 50%, rgba($black, 0) 50%);
-    background-position: 0 -40px;
+    background-position: 0 $scrolldown-height * -1;
     background-size: 100% 200%;
-    animation: scrolldown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+    animation: scrolldown $scrolldown-duration cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
 }
 
 @keyframes scrolldown {
     0% {
-        background-position: 0 -40px;
+        background-position: 0 $scrolldown-height * -1;
     }
     75% {
         background-position: 0 0;
     }
     100% {
-        background-position: 0 40px;
+        background-position: 0 $scrolldown-height;
     }
 }
