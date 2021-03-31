@@ -56,7 +56,7 @@
 
     &__cta {
         position: absolute;
-        @include fluidValue("bottom", "s-24");
+        @include fluidValue("bottom", "s-64");
         display: flex;
         left: 50%;
         transform: translateX(-50%);
