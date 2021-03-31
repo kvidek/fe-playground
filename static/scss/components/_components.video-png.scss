@@ -1,0 +1,101 @@
+.c-video-png-wrapper {
+}
+
+.c-video-png {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+    &__bg-video {
+        display: block;
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        video {
+            display: block;
+            max-width: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%) scale(1.15);
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: 0;
+        height: 100%;
+        width: 3000%;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 100% 100%;
+        transform: scaleX(-1); //invert animation
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            height: 100%;
+            width: 100%;
+            background-color: $white;
+        }
+    }
+
+    &__cta {
+        position: absolute;
+        @include fluidValue("bottom", "s-20");
+        display: flex;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 4;
+        align-self: center;
+
+        span {
+            display: inline-block;
+            padding-top: 5px;
+        }
+    }
+}
+
+.c-scrolldown {
+    width: 1px;
+    height: 40px;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    background: linear-gradient(to bottom, $black 50%, rgba($black, 0) 50%);
+    background-position: 0 -40px;
+    background-size: 100% 200%;
+    animation: scrolldown 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+}
+
+@keyframes scrolldown {
+    0% {
+        background-position: 0 -40px;
+    }
+    75% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 40px;
+    }
+}
