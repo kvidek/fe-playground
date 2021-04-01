@@ -18,7 +18,7 @@ export default class videoPng {
         this.png = document.querySelector(this.DOM.png);
 
         //DIMENSIONS STUFF
-        this.frames = 33; //number of png frames
+        this.frames = 128; //number of png frames
         this.start = ((100 / this.frames) * -1) / 2;
         this.end = (100 + this.start) * -1;
     }
@@ -48,15 +48,11 @@ export default class videoPng {
         });
 
         sequenceTimeline.add("start")
-            .to(this.video, {
-                duration: 1.2,
-                scale: 1,
-            })
             .to(
             this.png,
             {
                 x: `${this.end}%`,
-                duration: 1.2,
+                duration: 2,
                 ease: `steps(${this.frames - 1})`,
             },
             "start",
@@ -66,10 +62,10 @@ export default class videoPng {
             trigger: this.videoPng,
             animation: sequenceTimeline,
             start: "top top",
-            end: "300%",
+            end: "400%",
             pin: true,
             //markers: true,
-            scrub: 0.8,
+            scrub: 0.4,
         });
     }
 

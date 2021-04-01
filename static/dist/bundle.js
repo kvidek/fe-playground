@@ -6605,7 +6605,7 @@ var videoPng = /*#__PURE__*/function () {
     this.video = document.querySelector(this.DOM.video);
     this.png = document.querySelector(this.DOM.png); //DIMENSIONS STUFF
 
-    this.frames = 33; //number of png frames
+    this.frames = 128; //number of png frames
 
     this.start = 100 / this.frames * -1 / 2;
     this.end = (100 + this.start) * -1;
@@ -6637,12 +6637,9 @@ var videoPng = /*#__PURE__*/function () {
         x: "".concat(this.start, "%")
       });
 
-      sequenceTimeline.add("start").to(this.video, {
-        duration: 1.2,
-        scale: 1
-      }).to(this.png, {
+      sequenceTimeline.add("start").to(this.png, {
         x: "".concat(this.end, "%"),
-        duration: 1.2,
+        duration: 2,
         ease: "steps(".concat(this.frames - 1, ")")
       }, "start");
 
@@ -6650,10 +6647,10 @@ var videoPng = /*#__PURE__*/function () {
         trigger: this.videoPng,
         animation: sequenceTimeline,
         start: "top top",
-        end: "300%",
+        end: "400%",
         pin: true,
         //markers: true,
-        scrub: 0.8
+        scrub: 0.4
       });
     }
   }, {
